@@ -1,0 +1,95 @@
+{% extends 'attend/base.html' %}
+
+<title>{% block title %}Tech innova android{% endblock %}</title>
+{% block content %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'attend/intro_page.css' %}">
+    <div class="container-fluid">
+        <div class="container">
+            <h2 class="text-center" id="title">For Attendance login here</h2>
+            <p class="text-center">
+                <small id="passwordHelpInline" class="text-muted"> Developer: follow me on facebook <a
+                        href="https://www.facebook.com/JheanYu"> John niro yumang</a> inspired from <a
+                        href="https://p.w3layouts.com/">https://p.w3layouts.com/</a>.
+                </small>
+            </p>
+            <hr>
+            <div class="row">
+                <div class="col-md-5">
+                    <form role="form" method="post" action=".">
+                        <fieldset>
+                            <p class="text-uppercase pull-center"> SIGN UP.</p>
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" class="form-control input-lg"
+                                       placeholder="username">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-lg"
+                                       placeholder="Email Address">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control input-lg"
+                                       placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password2" id="password2" class="form-control input-lg"
+                                       placeholder="Confrom password">
+
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="year" id="year" class="form-control input-lg"
+                                       placeholder="studing year">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="contact" id="contact" class="form-control input-lg"
+
+                                       placeholder="contact No">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="branch" id="branch" class="form-group input-lg"
+                                       placeholder="Branch">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input">
+                                    By Clicking register you're agree to our policy & terms
+                                </label>
+                            </div>
+                            <div>
+                                <input type="submit" class="btn btn-lg btn-primary   value=" Register">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="col-md-2">
+                    <!-------null------>
+                </div>
+
+                <div class="col-md-5">
+                    <form role="form" action="{% url 'attend:profile' %}" method="post" enctype="text/plain">
+                        {% csrf_token %}
+                        <fieldset>
+                            <p class="text-uppercase"> Login using your account: </p>
+
+                            <div class="form-group">
+                                <input type="email" name="username" id="username" class="form-control input-lg"
+                                       placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control input-lg"
+                                       placeholder="Password">
+                            </div>
+                            <div>
+                                <input type="submit" class="btn btn-success" value="Sign In" >
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

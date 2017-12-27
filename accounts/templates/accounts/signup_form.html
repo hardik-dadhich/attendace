@@ -1,0 +1,76 @@
+{% extends 'attend/base.html' %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'attend/intro_page.css' %}">
+{% block title %}sign up{% endblock %}
+
+{% block registration %}
+    <div class="container" style="background-color: antiquewhite">
+        <div class="col-md-5 col-sm-2">
+            <div class="container">
+                <h2>Sign up</h2>
+                <form action="{% url 'attend:profile' %}" method="post" novalidate>
+                    <fieldset>
+                        <p class="text-uppercase pull-center"> SIGN UP.</p>
+                        <div class="form-group">
+                            <input type='hidden' name='csrfmiddlewaretoken'
+                                   value='bjEgEMYC6iQGCDVProS84wX7jE2qxMPgG7wN5bjCDCH1dPnVyU0yfkwvnHwDWqTW'/>
+                        </div>
+                        <div class="form-group">
+                            <p><label for="id_username">Username:</label> <input type="text" name="username"
+                                                                                 maxlength="150"
+                                                                                 autofocus required id="id_username"
+                                                                                 class="form-control input-lg"/>
+                                <span
+                                        class="helptext">Required. 150 characters or fewer. </span>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p><label for="id_email">Email:</label>
+                                <input type="email" name="email" maxlength="250" autofocus required id="id_email"
+                                       class="form-control input-lg"/>
+                                <span>Email field is required*</span>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p><label for="id_password1">Password:</label> <input type="password" name="password1"
+                                                                                  required
+                                                                                  id="id_password1"
+                                                                                  class="form-control input-lg"/> <span
+                                    class="helptext"><ul><li>Your password can&#39;t be too similar to your other personal information.</li><li>Your password can&#39;t be a commonly used password.</li><li>Your password can&#39;t be entirely numeric.</li></ul></span>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p><label for="id_password2">Password confirmation:</label> <input type="password"
+                                                                                               name="password2"
+                                                                                               required
+                                                                                               id="id_password2"
+                                                                                               class="form-control input-lg"/>
+                                <span
+                                        class="helptext">Enter the same password as before, for verification.</span></p>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create an account</button>
+                    </fieldset>
+                </form>
+
+                <div class="card-footer text-muted text-center">
+                    Already have an account? <a href="#">Log in</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}
